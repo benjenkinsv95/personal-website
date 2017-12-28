@@ -1,13 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { RouterModule } from '@angular/router';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
-import { HomeComponent } from './home.component';
+import {HomeComponent} from './home.component';
 
-import { ComponentsModule } from '../components/components.module';
+import {ComponentsModule} from '../components/components.module';
+import {ContactModule} from "../contact/contact.module";
+import {AboutModule} from "../about/about.module";
+import {ProjectsModule} from "../projects/projects.module";
 
 @NgModule({
     imports: [
@@ -15,7 +17,10 @@ import { ComponentsModule } from '../components/components.module';
         BrowserModule,
         FormsModule,
         RouterModule,
-        ComponentsModule
+      ComponentsModule,
+      ContactModule,
+      AboutModule,
+      ProjectsModule
     ],
     declarations: [ HomeComponent ],
     exports:[ HomeComponent ],
