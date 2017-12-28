@@ -1,6 +1,12 @@
-# [Ben Jenkins Personal Website](http://www.ben-jenkins.com/) [![version][version-badge]][CHANGELOG] 
-[![license][license-badge]][LICENSE]
+# [Ben Jenkins Personal Website](http://www.ben-jenkins.com/) [![version][version-badge]][CHANGELOG] [![license][license-badge]][LICENSE]
 This project contains the source code form my personal website.
+
+## Deployment
+
+### Serving
+We must ng serve with the following parameters or else we get a bad host header.
+
+ng serve --host 0.0.0.0 --disable-host-check
 
 ### License
 

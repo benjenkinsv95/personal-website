@@ -31,6 +31,13 @@
                         <p class="d-lg-none">GitHub</p>
                     </a>
                 </li>
+              <li class="nav-item" *ngIf="!isDocumentation()">
+                <a class="nav-link" rel="tooltip" title="Get in touch" data-placement="bottom"
+                   href="mailto:benjenkinsv95@gmail.com" target="_blank">
+                  <i class="fa fa-envelope"></i>
+                  <p class="d-lg-none">Email</p>
+                </a>
+              </li>
 
                 <!--Example of icon and text-->
                 <!--<li class="nav-item" *ngIf="!isDocumentation()">-->
