@@ -1,0 +1,21 @@
+#boston-scavenger-banner {
+  background-image: url('/assets/img/boston_scavenger_long.png');
+  height: 300px;
+  width: 100%;
+  background-position: center;
+  margin-bottom: 25px
+}
+
+#boston-scavenger-logo {
+  max-width: 350px;
+  margin-bottom: 25px
+}
+
+p {
+  margin-bottom: 20px;
+}
+
+#boston-scavenger-button {
+  background: rgb(255, 94, 0);
+  color: white
+}
