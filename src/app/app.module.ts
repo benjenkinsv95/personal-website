@@ -13,6 +13,7 @@ import {NavbarComponent} from './shared/navbar/navbar.component';
 import {FooterComponent} from './shared/footer/footer.component';
 
 import {HomeModule} from './home/home.module';
+import { RobokindComponent } from './robokind/robokind.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import {HomeModule} from './home/home.module';
     AppRoutingModule,
     HomeModule
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

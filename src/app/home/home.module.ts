@@ -7,9 +7,10 @@ import {RouterModule} from '@angular/router';
 import {HomeComponent} from './home.component';
 
 import {ComponentsModule} from '../components/components.module';
-import {ContactModule} from "../contact/contact.module";
-import {AboutModule} from "../about/about.module";
-import {ProjectsModule} from "../projects/projects.module";
+import {ContactModule} from '../contact/contact.module';
+import {AboutModule} from '../about/about.module';
+import {ProjectsModule} from '../projects/projects.module';
+import {RobokindModule} from '../robokind/robokind.module';
 
 @NgModule({
     imports: [
@@ -20,10 +21,11 @@ import {ProjectsModule} from "../projects/projects.module";
       ComponentsModule,
       ContactModule,
       AboutModule,
-      ProjectsModule
+      ProjectsModule,
+      RobokindModule
     ],
     declarations: [ HomeComponent ],
-    exports:[ HomeComponent ],
+    exports: [ HomeComponent ],
     providers: []
 })
 export class HomeModule { }
