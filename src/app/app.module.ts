@@ -14,6 +14,8 @@ import {FooterComponent} from './shared/footer/footer.component';
 
 import {HomeModule} from './home/home.module';
 import { RobokindComponent } from './robokind/robokind.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,8 @@ import { RobokindComponent } from './robokind/robokind.component';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
+    HomeModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   exports: [],
   providers: [],
