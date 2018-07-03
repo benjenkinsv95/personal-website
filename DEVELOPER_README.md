@@ -21,7 +21,7 @@ ng build --prod --output-path dist && \
 ## Run Docker Image (from Docker hub)
 ```
 docker pull benjenkinsv95/personal-website && \
-docker run -p 80:80 benjenkinsv95/personal-website
+docker run -d -e VIRTUAL_HOST=ben-jenkins.com benjenkinsv95/personal-website
 ```
 
 ### Ports
