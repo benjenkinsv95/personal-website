@@ -13,13 +13,16 @@ Install Docker
 ```
 ng build --prod --output-path dist && \
   docker image build -t personal-website . && \
-  docker tag personal-website benjenkinsv95/personal-website:most-recent && \
-  docker push benjenkinsv95/personal-website:most-recent
+  docker tag personal-website benjenkinsv95/personal-website && \
+  docker push benjenkinsv95/personal-website
 ```
 
 
 ## Run Docker Image (from Docker hub)
-`docker run -p 80:80 benjenkinsv95/personal-website:most-recent`
+```
+docker pull benjenkinsv95/personal-website && \
+docker run -p 80:80 benjenkinsv95/personal-website
+```
 
 ### Ports
 The left port your server makes accessible. While the right port is used inside the docker container.
