@@ -1,15 +1,24 @@
-# Local Development
-## Prerequisite
-Install angular CLI
+# Developer READ ME
+Here is a quick write up of how to start the app and deploy it.
 
-## Run
+
+## Local Development
+### Prerequisite
+To run it locally, you'll need to first install the angular CLI.
+
+
+### Build
+Build with `npm install`
+
+### Run
 Then startup the website with `ng serve --open`
 
-# Deployment
-## Prerequisite
-Install Docker
+## Deploy to Production
+### Prerequisite
+Install Docker on the production machine and the machine you plan to build from.
 
-## Build and Push to Docker Hub
+### Build and Push to Docker Hub
+Build the Angular application, turn it into a docker image, tag it, and upload it to Docker Hub.
 ```
 ng build --prod --output-path dist && \
   docker image build -t personal-website . && \
@@ -18,14 +27,43 @@ ng build --prod --output-path dist && \
 ```
 
 
-## Run Docker Image (from Docker hub)
+### Run Docker Image (from Docker hub)
+On the production machine
+
+#### Prerequisites
+These should be running. They will allow you to map the application to domain names and provide a secure HTTPS connection using Nginx and letsencrypt.
+
+##### Start Nginx Proxy Server for domain name mapping
+Replace `/root/certs` with the path to where your certs are located. 
+```
+docker run -d -p 80:80 -p 443:443 \
+    --name nginx-proxy \
+    -v /root/certs:/etc/nginx/certs:ro \
+    -v /etc/nginx/vhost.d \
+    -v /usr/share/nginx/html \
+    -v /var/run/docker.sock:/tmp/docker.sock:ro \
+    --label com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy \
+    jwilder/nginx-proxy
+```
+This will map domain names to your docker applications. Using SSL certs for HTTPS.
+
+#### Nginx Proxy Companion to generate SSL certificates
+Replace `/root/certs` with the path to where your certs are located. 
+```
+docker run -d \
+    -v /root/certs:/etc/nginx/certs:rw \
+    -v /var/run/docker.sock:/var/run/docker.sock:ro \
+    --volumes-from nginx-proxy \
+    jrcs/letsencrypt-nginx-proxy-companion
+```
+
+#### Run App in Production
+Finally, run the application from DockerHub. Pulls down a fresh copy and specifies what the domain name should be.
 ```
 docker pull benjenkinsv95/personal-website && \
-docker run -d -e VIRTUAL_HOST=ben-jenkins.com benjenkinsv95/personal-website
+docker run -d \
+-e VIRTUAL_HOST=ben-jenkins.com \
+-e LETSENCRYPT_HOST=ben-jenkins.com \
+-e LETSENCRYPT_EMAIL=benjenkinsv95@gmail.com \
+benjenkinsv95/personal-website
 ```
-
-### Ports
-The left port your server makes accessible. While the right port is used inside the docker container.
-
-## HTTPS
-https://medium.com/@mvuksano/using-tls-certificates-with-nginx-docker-container-74c6769a26db
