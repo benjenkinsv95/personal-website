@@ -1,11 +1,9 @@
 # Developer READ ME
 Here is a quick write up of how to start the app and deploy it.
 
-
 ## Local Development
 ### Prerequisite
 To run it locally, you'll need to first install the angular CLI.
-
 
 ### Build
 Build with `npm install`
@@ -25,7 +23,6 @@ ng build --prod --output-path dist && \
   docker tag personal-website benjenkinsv95/personal-website && \
   docker push benjenkinsv95/personal-website
 ```
-
 
 ### Run Docker Image (from Docker hub)
 On the production machine
