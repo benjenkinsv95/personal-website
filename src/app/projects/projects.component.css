@@ -19,3 +19,16 @@ p {
   background: rgb(255, 94, 0);
   color: white
 }
+
+.decider-row {
+  background-color: #F5F5F5;
+}
+
+.boston-scavenger-container, .decider-row {
+  padding-bottom: 40px;
+}
+
+.decider-img {
+  padding-bottom: 10px;
+  padding-top: 20px;
+}

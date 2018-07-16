@@ -10,7 +10,6 @@ import {ComponentsModule} from '../components/components.module';
 import {ContactModule} from '../contact/contact.module';
 import {AboutModule} from '../about/about.module';
 import {ProjectsModule} from '../projects/projects.module';
-import {RobokindModule} from '../robokind/robokind.module';
 
 @NgModule({
     imports: [
@@ -21,8 +20,7 @@ import {RobokindModule} from '../robokind/robokind.module';
       ComponentsModule,
       ContactModule,
       AboutModule,
-      ProjectsModule,
-      RobokindModule
+      ProjectsModule
     ],
     declarations: [ HomeComponent ],
     exports: [ HomeComponent ],
