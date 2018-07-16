@@ -13,7 +13,6 @@ import {NavbarComponent} from './shared/navbar/navbar.component';
 import {FooterComponent} from './shared/footer/footer.component';
 
 import {HomeModule} from './home/home.module';
-import { RobokindComponent } from './robokind/robokind.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 
