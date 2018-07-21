@@ -35,8 +35,8 @@ Finally, run the application from DockerHub. Pulls down a fresh copy and specifi
 ```
 docker pull benjenkinsv95/personal-website && \
 docker run -d \
--e VIRTUAL_HOST=ben-jenkins.com \
--e LETSENCRYPT_HOST=ben-jenkins.com \
+-e "VIRTUAL_HOST=ben-jenkins.com,www.ben-jenkins.com" \
+-e "LETSENCRYPT_HOST=ben-jenkins.com,www.ben-jenkins.com" \
 -e LETSENCRYPT_EMAIL=benjenkinsv95@gmail.com \
 benjenkinsv95/personal-website
 ```
